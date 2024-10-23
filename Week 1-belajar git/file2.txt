@@ -1,0 +1,2 @@
+ini file2
+fitur B
