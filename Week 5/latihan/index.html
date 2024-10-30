@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan</title>
+</head>
+<body>
+    <form id="form">
+        Silahkan isi data Anda
+        <table border="1">
+            <tr>
+                <td>
+                    <label for="Nama_lengkap">Nama lengkap</label>
+                </td>
+                <td>
+                    <div class="input" id="Nama_lengkap">
+                        <input type="text">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="password">Password</label>
+                </td>
+                <td>
+                    <div class="input" id="Password">
+                        <input type="password">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="jenis_kelamis">Jenis Kelamin</label>
+                </td>
+                <td>
+                    <div class="input" id="Gender">
+                        <input type="radio" id="login">Pria<br/>
+                        <input type="radio" id="login">Wanita
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Pilih Prodi</td>
+                <td>
+                    <select name="prodi" id="prodi">
+                        <option value="CS" selected>CS</option>
+                        <option value="CH">CH</option>
+                        <option value="PE">PE</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="alamat">Alamat</label>
+                </td>
+                <td>
+                    <div class="input" id="Alamat">
+                        <textarea cols="30" rows="10" placeholder="Isi alamat anda disini"></textarea>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="saya_setuju"></div>Validasi</label></td>
+                <td>
+                    <input type="checkbox" name="sudah_bayar" id="sudah_bayar">
+                    <label for="sudah_bayar">Saya Setuju dengan S&K yang berlaku</label>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <button id="button" type="submit">Submit</button>
+        <input type="reset" value="Reset">
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
