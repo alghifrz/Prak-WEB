@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+}
+
+/* Body */
+body {
+    color: white;
+    background: linear-gradient(0deg, #001c36 10%, #0099FF);
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+    text-decoration: none;
+}
+
+.parent {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidel container sider"
+        "footer footer footer";
+    grid-template-columns: 1fr 8fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh; /* Ensures the grid takes up the full viewport height */
+}
+
+.header {
+    grid-area: header;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #001c36;
+}
+
+.header .logo {
+    color: white;
+    font-weight: 700;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.sidel {
+    grid-area: sidel;
+}
+
+.sider {
+    grid-area: sider;
+}
+
+.container {
+    grid-area: container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px; /* Adjusted padding to avoid content overflow */
+    text-align: center;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #000e1b;
+    border-top: white solid 1px;
+    padding: 20px;
+    font-size: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 7rem; 
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.btn {
+    background-color: #0099FF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #001c36;
+}
+
+/* Modal overlay styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* On top */
+    left: 0;
+    top: 0;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 2px solid #0099FF;
+    width: 80%;
+    max-width: fit-content;
+    color: black;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+    font-size: 4rem;
+    color: #0099FF;
+}
+
+.modal-content ul {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 20px;
+    line-height: 40px;
+    padding-bottom: 10px;
+    border-bottom: #000e1b solid 1px;
+}
+
+.buttonPopup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.buttonPopup button:first-child {
+    background-color: white;
+    color: #0099FF;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: inset 0 0 0 3px #0099FF;
+    /* border: 3px solid #0099FF; */
+    border-radius: 70px;
+    cursor: pointer;
+    /* transition: background 0.3s; */
+}
+
+.buttonPopup button:first-child:hover {
+    background-color: #001c36;
+    color: white;
+    box-shadow: inset 0 0 0 3px #001c36;
+}
+
+.buttonPopup button:last-child {
+    background-color: #0099FF;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 70px;
+    cursor: pointer;
+    /* transition: background 0.3s; */
+}
+
+.buttonPopup button:last-child:hover {
+    background-color: #001c36;
+}
+
+/* Container styles */
+.container {
+    grid-area: container;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.data {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.data h1 {
+    color: #001c36;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+/* Input form styles */
+.inputan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.inputan input {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem 1.2rem;
+    margin-bottom: 0;
+    border: 2px solid #0099FF;
+    border-radius: 10px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    transition: border-color 0.3s ease;
+}
+
+.inputan input:focus {
+    outline: none;
+    border-color: #001c36;
+    box-shadow: 0 0 0 2px rgba(0, 153, 255, 0.2);
+}
+
+.inputan input::placeholder {
+    color: #666;
+}
+
+.inputan button {
+    background-color: #0099FF;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: clamp(1.2rem, 3vw, 2rem);
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: fit-content;
+    min-width: 200px;
+}
+
+.inputan button:hover {
+    background-color: #001c36;
+}
+
+/* Popup styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popup-content p {
+    margin-bottom: 1.5rem;
+    color: #001c36;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.popup-content button {
+    background-color: #0099FF;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    transition: background 0.3s ease;
+}
+
+.popup-content button:hover {
+    background-color: #001c36;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .data {
+        padding: 1.5rem;
+    }
+    
+    .inputan {
+        gap: 1rem;
+    }
+    
+    .inputan input {
+        padding: 0.6rem 1rem;
+    }
+    
+    .inputan button {
+        padding: 0.6rem 1.5rem;
+        min-width: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .data {
+        padding: 1rem;
+    }
+    
+    .popup-content {
+        padding: 1.5rem;
+    }
+}
+
+/* Popup styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    max-width: 80%;
+}
+
+.popup-content p {
+    margin-bottom: 20px;
+    color: #001c36;
+}
+
+.popup-content button {
+    background-color: #0099FF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background-color: #007acc;
+}
+
+.quiz-container {
+    margin: 2000px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.student-info {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    margin: 15px;
+    padding: 10px;
+    border-bottom: 2px solid #f0f0f0;
+    background-color: #001c36;
+    border-radius: 40px;
+}
+
+.student-name, .student-nim {
+    font-size: 1.1rem;
+    color: white;
+    font-weight: 600;
+
+}
+
+/* Container untuk countdown bar */
+#timer {
+    font-size: 18px;
+    color: #666;
+    text-align: left;
+    /* margin: 5px; */
+}
+
+.timer-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #ddd;
+    border-radius: 40px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* Countdown bar yang akan berkurang */
+.countdown-bar {
+    height: 100%;
+    background-color: #0099FF;  
+    width: 100%;  /* Start dengan 100% */
+    border-radius: 40px;
+    transition: width 1s linear;  /* Tambahkan animasi untuk pergerakan bar */
+}
+
+.no-transition {
+    transition: none !important;  /* Nonaktifkan transisi */
+}
+
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.quiz-title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.score {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.question {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.option {
+    padding: 15px;
+    border: 2px solid #0099FF;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #001c36;
+    font-weight: 500;
+}
+
+.option:hover:not(.selected):not(.correct):not(.wrong) {
+    background-color: #0099FF;
+    border-color: #dee2e6;
+    color: white;
+}
+
+.option.selected {
+    background-color: #e3f2fd;
+    border-color: #90caf9;
+}
+
+.option.correct {
+    background-color: #00eb0c;
+    border-color: #00eb0c;
+}
+
+.option.wrong {
+    background-color: #d81313;
+    border-color: #d81313;
+}
+
+.quiz-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+#next-btn {
+    background-color: #2196f3;
+    color: white;
+}
+
+#next-btn:hover:not(.disabled) {
+    background-color: #1976d2;
+}
+
+#prev-btn {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#prev-btn:hover {
+    background-color: #e0e0e0;
+}
+
+button.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#question-counter {
+    color: #666;
+}
+
+.final-message {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.restart-btn {
+    background-color: #4caf50;
+    color: white;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.restart-btn:hover {
+    background-color: #43a047;
+}

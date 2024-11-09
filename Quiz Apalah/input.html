@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="parent">
+        <header class="header">
+            <a href="#" class="logo">Quiz Apalah</a>
+        </header>
+        <aside class="sidel"></aside>
+        <main class="container">
+            <div class="data">
+                <h1>Masukkan Data</h1>
+                <div class="inputan">
+                    <input type="text" id="nama" placeholder="Masukkan Nama" required>
+                    <input type="text" id="nim" placeholder="Masukkan NIM" required>
+                    <button onclick="login()">Login</button>
+                </div>
+            </div>        
+        </main>
+        <aside class="sider"></aside>
+        <footer class="footer">
+            <p>Copyright &copy; 2024 Quiz Apalah | All rights reserved.</p>
+        </footer>
+    </section>
+
+    <!-- Popup for validation message -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Silakan isi semua kolom data.</p>
+            <button onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- Popup for successful login -->
+    <div id="loginPopup" class="popup">
+        <div class="popup-content">
+            <p>Login Berhasil!</p>
+            <a href="quiz.html"><button>Lanjut ke Quiz Soal 1</button></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
