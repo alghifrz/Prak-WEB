@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
+      <style type="text/tailwindcss">
+        @layer utilities {
+          .content-auto {
+            content-visibility: auto;
+          }
+        }
+      </style>
+</head>
+<body>
+    <div class="grid grid-cols-4 gap-4">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div>06</div>
+        <div>07</div>
+        <div>08</div>
+        <div>09</div>
+    </div>
+    <br>
+    <br>
+    <div class="grid grid-cols-4 gap-4">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
+        <div>04</div>
+        <div>05</div>
+        <div class="grid grid-cols-subgrid gap-4 col-span-3">
+          <div class="col-start-2">06</div>
+        </div>
+      </div>
+    <div class="parent grid grid-rows-3 grid-cols-2">
+        <header class="bg-blue-600 col-span-2 h-10">ini header</header>
+        <aside class="bg-red-600 h-10">ini side</aside>
+        <div class="content bg-green-600 h-10">ini content</div>
+        <footer class="bg-yellow-600 col-span-2 h-10">ini footer</footer>
+    </div>
+    <div class="lg:content-auto">
+        <!-- ... -->
+    </div>
+    <h1 class="text-[100px] font-bold underline text-red-600">
+        Hello world!
+    </h1>
+</body>
+</html>
